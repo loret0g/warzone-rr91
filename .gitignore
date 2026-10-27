@@ -20,3 +20,5 @@ dist/
 # Archivos del sistema
 .DS_Store
 Thumbs.db
+# Local Netlify folder
+.netlify

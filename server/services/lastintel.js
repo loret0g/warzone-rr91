@@ -1,6 +1,9 @@
 const URL = "https://mcp.lastintel.io";
 
-const { obtenerConCache } = require("./cache");
+// La caché local se carga únicamente cuando se utiliza.
+function obtenerConCache(clave, consultar) {
+  return require("./cache").obtenerConCache(clave, consultar);
+}
 
 // Interpretamos las respuestas JSON y SSE de LastIntel.
 function interpretarRespuesta(cuerpo, tipo) {
@@ -192,8 +195,8 @@ async function consultarDetalleAlianza(id) {
   };
 }
 
-// La caché decide cuándo consultar LastIntel.
 module.exports = {
+  // Versión local: mantiene nuestra caché actual.
   obtenerRankingTHP: (servidor, limite = 100) =>
     obtenerConCache(
       `ranking_${servidor}_${limite}`,
@@ -211,4 +214,9 @@ module.exports = {
       `alianza_${id}`,
       () => consultarDetalleAlianza(id)
     ),
+
+  // Versión sin caché local: para el futuro backend de Netlify.
+  consultarRankingTHP,
+  consultarAlianzas,
+  consultarDetalleAlianza,
 };
