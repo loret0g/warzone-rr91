@@ -1,0 +1,173 @@
+.ranking-comandantes {
+  margin-top: 24px;
+  padding: 24px;
+  background: #1f2937;
+  border: 1px solid #374151;
+  border-radius: 12px;
+}
+
+.ranking-comandantes h2 {
+  margin-top: 0;
+}
+
+.ranking-resumen {
+  color: #9ca3af;
+  margin: 16px 0;
+}
+
+.ranking-error {
+  color: #fca5a5;
+}
+
+.ranking-tabla-contenedor {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.ranking-comandantes table {
+  width: 100%;
+  border-collapse: collapse;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.ranking-comandantes th,
+.ranking-comandantes td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #374151;
+}
+
+.ranking-comandantes th {
+  color: #9ca3af;
+  font-size: 0.85rem;
+}
+
+.ranking-comandantes td {
+  color: #f9fafb;
+}
+
+.ranking-comandantes tbody tr:hover {
+  background: #374151;
+}
+
+/* Destacar únicamente la columna THP */
+.ranking-comandantes td:nth-child(7) {
+  font-weight: 700;
+  color: #93c5fd;
+}
+
+@media (max-width: 600px) {
+  .ranking-comandantes {
+    padding: 16px;
+  }
+
+  .ranking-comandantes th,
+  .ranking-comandantes td {
+    padding: 10px;
+    font-size: 0.85rem;
+  }
+}
+
+
+/* Fondo suave según la región del comandante */
+.ranking-comandantes tbody tr {
+  background-color: color-mix(
+    in srgb,
+    var(--color-region) 20%,
+    #1f2937
+  );
+  transition: background-color 0.2s ease;
+}
+
+/* Un poco más de intensidad al pasar el ratón */
+.ranking-comandantes tbody tr:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--color-region) 30%,
+    #1f2937
+  );
+}
+
+/* Nombre completo del país */
+.ranking-pais {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+}
+
+.ranking-horario {
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  color: #e5e7eb;
+  text-align: center;
+}
+
+.ranking-comandantes th:nth-last-child(-n + 3) {
+  text-align: center;
+}
+
+/* ==========================================
+   FILTROS TOP DEL RANKING CONJUNTO
+========================================== */
+
+.ranking-filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 18px 0 12px;
+}
+
+.ranking-filtros button {
+  padding: 10px 14px;
+  background: #111827;
+  color: #d1d5db;
+  border: 1px solid #374151;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.ranking-filtros button:hover {
+  background: #374151;
+}
+
+.ranking-filtros button.activo {
+  background: #2563eb;
+  border-color: #3b82f6;
+  color: #ffffff;
+}
+
+.ranking-filtros button:focus-visible {
+  outline: 2px solid #93c5fd;
+  outline-offset: 3px;
+}
+
+.ranking-mostrando {
+  margin: 0 0 16px;
+  color: #9ca3af;
+  font-size: 12px;
+}
+
+.ranking-mostrando strong {
+  color: #e5e7eb;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 600px) {
+  .ranking-filtros {
+    gap: 6px;
+  }
+
+  .ranking-filtros button {
+    flex: 1;
+    min-width: 65px;
+    padding: 10px 8px;
+    font-size: 12px;
+  }
+}
