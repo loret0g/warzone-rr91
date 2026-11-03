@@ -3,6 +3,7 @@ import { obtenerDetalleAlianza } from "../services/api";
 import { obtenerPais } from "../utils/paises";
 import { obtenerHorarios } from "../utils/horarios";
 import { obtenerColorHorario } from "../utils/coloresHorarios";
+import Bandera from "./Bandera";
 import "./AnalisisBallenas.css";
 
 const FILTROS = [10, 20, 50, "todos"];
@@ -53,7 +54,9 @@ function TarjetaBandera({ grupo, totalTHP }) {
     >
       <div className="ballenas-tarjeta-cabecera">
         <div className="ballenas-tarjeta-pais">
-          <span className="ballenas-tarjeta-bandera">{grupo.bandera}</span>
+          <span className="ballenas-tarjeta-bandera">
+            <Bandera codigo={grupo.codigo} nombre={grupo.nombre} />
+          </span>
           <h3>{grupo.nombre}</h3>
         </div>
 
@@ -412,7 +415,19 @@ export default function AnalisisBallenas({ alianzasSeleccionadas = [] }) {
                       {analisis.distribucion.map((grupo) => (
                         <tr key={grupo.codigo}>
                           <td>
-                            {grupo.bandera} {grupo.nombre}
+                            <span
+                              style={{
+                                display: "inline-flex",
+                                alignItems: "center",
+                                gap: "8px",
+                              }}
+                            >
+                              <Bandera
+                                codigo={grupo.codigo}
+                                nombre={grupo.nombre}
+                              />
+                              {grupo.nombre}
+                            </span>
                           </td>
 
                           <td>

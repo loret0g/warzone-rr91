@@ -3,6 +3,7 @@ import { obtenerDetalleAlianza } from "../services/api";
 import { obtenerPais } from "../utils/paises";
 import { obtenerHorarios } from "../utils/horarios";
 import { obtenerColorHorario } from "../utils/coloresHorarios";
+import Bandera from "./Bandera";
 import "./RankingComandantes.css";
 
 const FILTROS = [10, 20, 50, "todos"];
@@ -215,13 +216,22 @@ function RankingComandantes({ alianzasSeleccionadas = [] }) {
 
                           <td>#{jugador.servidor}</td>
 
-                          <td>
-                            <td translate="no">[{jugador.alianza}]</td>
-                          </td>
+                          <td translate="no">[{jugador.alianza}]</td>
 
                           <td>
-                            <span className="ranking-pais">
-                              {pais.bandera} {pais.nombre}
+                            <span
+                              className="ranking-pais"
+                              style={{
+                                display: "inline-flex",
+                                alignItems: "center",
+                                gap: "8px",
+                              }}
+                            >
+                              <Bandera
+                                codigo={jugador.bandera}
+                                nombre={pais.nombre}
+                              />
+                              {pais.nombre}
                             </span>
                           </td>
 
