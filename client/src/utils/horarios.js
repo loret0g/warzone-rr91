@@ -14,6 +14,11 @@ const HUSOS_POR_PAIS = {
   ID: ["Asia/Jakarta", "Asia/Makassar", "Asia/Jayapura"],
   MY: ["Asia/Kuala_Lumpur"],
   SG: ["Asia/Singapore"],
+  KH: ["Asia/Phnom_Penh"],
+  MM: ["Asia/Yangon"],
+
+  // Asia meridional
+  IN: ["Asia/Kolkata"],
 
   // Oriente Medio
   SA: ["Asia/Riyadh"],
@@ -21,6 +26,10 @@ const HUSOS_POR_PAIS = {
   IQ: ["Asia/Baghdad"],
   AE: ["Asia/Dubai"],
   IR: ["Asia/Tehran"],
+  KW: ["Asia/Kuwait"],
+  QA: ["Asia/Qatar"],
+  BH: ["Asia/Bahrain"],
+  GE: ["Asia/Tbilisi"],
 
   // Europa
   ES: ["Europe/Madrid"],
@@ -30,6 +39,12 @@ const HUSOS_POR_PAIS = {
   GB: ["Europe/London"],
   PT: ["Europe/Lisbon", "Atlantic/Azores"],
   PL: ["Europe/Warsaw"],
+  NL: ["Europe/Amsterdam"],
+  CH: ["Europe/Zurich"],
+  IE: ["Europe/Dublin"],
+  MD: ["Europe/Chisinau"],
+  SE: ["Europe/Stockholm"],
+  UA: ["Europe/Kyiv"],
   RU: [
     "Europe/Kaliningrad",
     "Europe/Moscow",
@@ -42,6 +57,12 @@ const HUSOS_POR_PAIS = {
     "Asia/Magadan",
     "Asia/Kamchatka",
   ],
+
+  // África
+  MA: ["Africa/Casablanca"],
+  SD: ["Africa/Khartoum"],
+  EG: ["Africa/Cairo"],
+  AO: ["Africa/Luanda"],
 
   // América
   US: [
@@ -74,6 +95,12 @@ const HUSOS_POR_PAIS = {
   ],
   AR: ["America/Argentina/Buenos_Aires"],
   CL: ["America/Santiago", "Pacific/Easter"],
+  PR: ["America/Puerto_Rico"],
+  BB: ["America/Barbados"],
+  SR: ["America/Paramaribo"],
+
+  // América Central
+  BZ: ["America/Belize"],
 
   // Oceanía
   AU: [
@@ -84,11 +111,6 @@ const HUSOS_POR_PAIS = {
     "Australia/Sydney",
   ],
   NZ: ["Pacific/Auckland", "Pacific/Chatham"],
-  // América Central
-  BZ: ["America/Belize"],
-
-  // Asia meridional
-  IN: ["Asia/Kolkata"],
 
   // Unión Europea: referencia convencional de la aplicación
   EU: ["Europe/Paris"],
